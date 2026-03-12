@@ -1,0 +1,55 @@
+name: Проверка конфигураций
+
+# Когда запускать проверку
+on:
+  pull_request:
+    paths:
+      - '**.yaml'
+      - '**.yml'
+  push:
+    branches: [main]
+    paths:
+      - '**.yaml'
+      - '**.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Скачиваем код репозитория
+    - name: Клонируем репозиторий
+      uses: actions/checkout@v3
+    
+    # Ставим Python
+    - name: Устанавливаем Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    # Ставим библиотеку для YAML
+    - name: Устанавливаем зависимости
+      run: |
+        pip install pyyaml
+    
+    # Запускаем наш скрипт с правилами
+    - name: Запускаем проверку
+      run: |
+        python .github/scripts/check-config.py
+    
+    # Если проверка нашла ошибки - пишем коммент в PR
+    - name: Комментируем PR (если есть проблемы)
+      if: failure() && github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          let comment = '##Результаты проверки конфигов\n\n';
+          comment += '**Найдены проблемы!**\n\n';
+          comment += 'Пожалуйста, исправьте ошибки перед мержем.';
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
