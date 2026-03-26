@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# Скрипт для проверки конфигов перед деплоем
-# Запускается автоматически в GitHub Actions при Pull Request
-
 import yaml
 import sys
 import json
