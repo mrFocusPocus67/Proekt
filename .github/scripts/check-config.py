@@ -16,15 +16,10 @@ def check_config(file_path):
     warnings = []
     
     try:
-        # Пробуем прочитать файл как YAML (самый популярный формат конфигов)
+        # Пробуем прочитать файл как YAML
         with open(file_path, 'r') as f:
             content = f.read()
             config = yaml.safe_load(content)
-        
-        # ---------------------------------------------------------
-        # ТУТ БУДУТ НАШИ ПРАВИЛА ПРОВЕРКИ
-        # Добавляем новые правила по мере появления типичных ошибок
-        # ---------------------------------------------------------
         
         # Правило 1: Не должно быть включенного debug режима
         # В проде debug_mode: true может выдать чувствительные данные или тормозить
@@ -41,11 +36,11 @@ def check_config(file_path):
             errors.append({
                 'rule': 'simple_password',
                 'message': 'Найден простой пароль — используйте сложные или переменные окружения',
-                'severity': 'error'  # Это критично, блокируем деплой
+                'severity': 'error'
             })
         
         # Правило 3: Порты
-        # Порт 80 без HTTPS — плохая практика в современном мире
+        # Порт 80 без HTTPS
         if 'port: 80' in content:
             errors.append({
                 'rule': 'port_80',
@@ -54,7 +49,6 @@ def check_config(file_path):
             })
         
         # Правило 4: Запуск от рута
-        # Никогда не запускаем приложения от root — безопасность
         if 'user: root' in content:
             errors.append({
                 'rule': 'root_user',
@@ -105,7 +99,6 @@ def main():
     all_results = []
     
     # Ищем все YAML файлы в проекте (самые частые конфиги)
-    # Можно добавить JSON, TOML, .conf и т.д. если нужно
     for ext in ['*.yaml', '*.yml']:
         for file_path in Path('.').rglob(ext):
             # Пропускаем служебные папки GitHub
@@ -121,7 +114,6 @@ def main():
                     **error
                 })
     
-    # Выводим результаты красиво
     if all_results:
         print("\n" + "=" * 60)
         print("❌  НАЙДЕНЫ ПРОБЛЕМЫ В КОНФИГАХ")
