@@ -1,0 +1,9 @@
+server:
+  debug_mode: false
+  port: 443
+  workers: 4
+
+database:
+  password: "KjH2!kL9#mN5$"
+  ssl: true
+  timeout: 30
