@@ -30,11 +30,11 @@ def check_config(file_path):
         # Люди часто забывают сменить дефолтные пароли
         password_value = str(config).lower()
         if '123456' in password_value or ('password' in password_value and '${' not in str(config)):
-        errors.append({
-        'rule': 'simple_password',
-        'message': 'Найден простой пароль — используйте сложные или переменные окружения',
-        'severity': 'error'
-    })
+            errors.append({
+                'rule': 'simple_password',
+                'message': 'Найден простой пароль — используйте сложные или переменные окружения',
+                'severity': 'error'
+            })
         
         # Правило 3: Порты
         # Порт 80 без HTTPS
