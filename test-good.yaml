@@ -4,6 +4,6 @@ server:
   workers: 4
 
 database:
-  password: ${DB_PASSWORD}
+  db_pass: ${DB_PASSWORD}
   ssl: true
   timeout: 30
