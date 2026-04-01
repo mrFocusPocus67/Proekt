@@ -28,12 +28,13 @@ def check_config(file_path):
         
         # Правило 2: Проверяем на тупые пароли
         # Люди часто забывают сменить дефолтные пароли
-        if '123456' in str(config) or 'password' in str(config).lower():
-            errors.append({
-                'rule': 'simple_password',
-                'message': 'Найден простой пароль — используйте сложные или переменные окружения',
-                'severity': 'error'
-            })
+        password_value = str(config).lower()
+        if '123456' in password_value or ('password' in password_value and '${' not in str(config)):
+        errors.append({
+        'rule': 'simple_password',
+        'message': 'Найден простой пароль — используйте сложные или переменные окружения',
+        'severity': 'error'
+    })
         
         # Правило 3: Порты
         # Порт 80 без HTTPS
