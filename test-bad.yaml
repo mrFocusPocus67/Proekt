@@ -1,0 +1,6 @@
+server:
+  debug_mode: true
+  port: 80
+
+database:
+  password: "123456"
