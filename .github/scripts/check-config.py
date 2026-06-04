@@ -63,7 +63,7 @@ def main():
     
     for ext in extensions:
         for file_path in Path('.').rglob(ext):
-            if '.github' in str(file_path):
+            if '.github' in str(file_path) or 'rules.json' in str(file_path):
                 continue
                 
             print(f"Проверяю: {file_path}")
