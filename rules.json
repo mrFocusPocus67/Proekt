@@ -1,0 +1,46 @@
+{
+  "rules": [
+    {
+      "name": "debug_mode",
+      "pattern": "debug_mode: true",
+      "message": "Найден debug режим — в проде должно быть выключено",
+      "severity": "warning",
+      "enabled": true
+    },
+    {
+      "name": "simple_password",
+      "pattern": "123456",
+      "message": "Найден простой пароль — используйте переменные окружения",
+      "severity": "error",
+      "enabled": true
+    },
+    {
+      "name": "port_80",
+      "pattern": "port: 80",
+      "message": "Используется порт 80, лучше 443 с HTTPS",
+      "severity": "warning",
+      "enabled": true
+    },
+    {
+      "name": "root_user",
+      "pattern": "user: root",
+      "message": "Запуск от root опасно, создайте отдельного пользователя",
+      "severity": "error",
+      "enabled": true
+    },
+    {
+      "name": "empty_values",
+      "pattern": "\"\"",
+      "message": "Найдены пустые строки, проверьте параметры",
+      "severity": "warning",
+      "enabled": true
+    },
+    {
+      "name": "negative_values",
+      "pattern": ":-",
+      "message": "Найдены отрицательные числа, проверьте значения",
+      "severity": "warning",
+      "enabled": true
+    }
+  ]
+}
