@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Отчет проверки конфигураций</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .error { color: red; }
+    .warning { color: orange; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+</style>
+</head>
+<body>
+    <h1>Отчет проверки конфигураций</h1>
+    <p><strong>Дата:</strong> 2026-06-04 06:39:06</p>
+    <p><strong>Ошибок:</strong> <span class="error">89</span></p>
+    <p><strong>Предупреждений:</strong> <span class="warning">190</span></p>
+    <table>
+        <tr><th>Файл</th><th>Правило</th><th>Сообщение</th><th>Severity</th></tr>
+        <tr>
+            <td>nginx-debug.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>nginx-debug.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>nginx-debug.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test-bad.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test-bad.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test-bad.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_003.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_003.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_003.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_094.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_039.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_039.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_039.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_058.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_058.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_058.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_032.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_032.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_032.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_007.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_007.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_007.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_023.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_023.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_023.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_070.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_070.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_070.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_042.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_042.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_042.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_057.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_057.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_057.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_001.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_001.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_001.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_080.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_080.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_038.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_038.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_038.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_028.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_028.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_028.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_084.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_084.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_084.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_075.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_075.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_075.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_040.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_040.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_040.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_029.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_029.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_029.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_055.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_055.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_055.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_097.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_097.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_006.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_006.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_006.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_092.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_092.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_081.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_081.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_051.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_051.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_051.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_026.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_026.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_026.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_045.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_045.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_045.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_064.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_064.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_064.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_077.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_077.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_077.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_035.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_035.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_035.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_008.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_008.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_008.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_052.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_052.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_052.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_091.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_091.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_024.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_024.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_024.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_067.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_067.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_027.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_027.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_027.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_096.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_096.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_072.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_093.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_025.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_025.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_025.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_002.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_002.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_002.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_086.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_086.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_049.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_049.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_049.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_012 copy.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_012 copy.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_012 copy.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_089.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_089.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_022.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_022.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_022.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_011.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_011.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_011.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_063.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_063.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_063.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_088.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_088.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_017.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_017.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_017.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_012.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_012.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_012.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_074.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_074.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_061.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_061.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_061.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_062.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_062.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_062.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_034.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_034.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_034.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_098.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_098.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_098.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_033.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_033.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_033.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_083.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_048.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_048.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_048.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_059.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_059.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_059.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_050.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_050.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_050.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_030.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_030.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_030.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_031.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_031.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_031.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_014.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_014.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_014.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_069.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_069.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_069.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_013.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_013.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_013.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_019.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_019.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_019.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_047.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_047.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_047.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_076.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_076.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_076.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_018.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_018.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_018.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_041.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_041.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_041.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_085.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_060.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_060.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_060.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_056.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_056.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_056.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_004.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_004.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_004.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_016.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_016.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_016.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_046.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_046.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_046.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_087.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_020.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_020.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_020.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_079.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_079.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_065.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_065.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_066.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_066.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_066.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_005.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_005.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_005.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_021.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_021.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_021.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_078.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_078.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_078.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_095.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_073.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_073.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_073.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_082.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_082.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_082.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_099.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_099.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_036.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_036.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_036.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_043.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_043.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_043.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_009.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_009.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_009.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_015.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_015.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_015.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_037.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_037.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_037.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_010.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_010.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_010.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_000.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_000.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_000.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_090.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_044.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_044.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_044.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_054.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_054.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_054.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_071.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_071.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_071.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_068.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_068.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_068.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_053.yaml</td>
+            <td>debug_mode</td>
+            <td>Найден debug режим — в проде должно быть выключено</td>
+            <td>warning</td>
+        </tr><tr>
+            <td>test_configs/test_error_053.yaml</td>
+            <td>simple_password</td>
+            <td>Найден простой пароль — используйте переменные окружения</td>
+            <td>error</td>
+        </tr><tr>
+            <td>test_configs/test_error_053.yaml</td>
+            <td>port_80</td>
+            <td>Используется порт 80, лучше 443 с HTTPS</td>
+            <td>warning</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,8 @@
+database:
+  password: qwerty
+  ssl: true
+  timeout: 60
+server:
+  debug_mode: true
+  port: 443
+  workers: 2
