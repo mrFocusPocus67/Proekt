@@ -1,0 +1,8 @@
+database:
+  password: '123456'
+  ssl: false
+  timeout: 60
+server:
+  debug_mode: false
+  port: 443
+  workers: 0

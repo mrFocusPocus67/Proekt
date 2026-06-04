@@ -1,0 +1,8 @@
+database:
+  password: ${DB_PASS}
+  ssl: true
+  timeout: 0
+server:
+  debug_mode: true
+  port: 443
+  workers: 4

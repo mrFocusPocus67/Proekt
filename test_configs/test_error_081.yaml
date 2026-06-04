@@ -1,0 +1,8 @@
+database:
+  password: password
+  ssl: true
+  timeout: 30
+server:
+  debug_mode: true
+  port: 80
+  workers: 8
