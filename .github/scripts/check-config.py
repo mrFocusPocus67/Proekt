@@ -1,41 +1,53 @@
 import yaml
 import sys
 import json
+import tomllib
 from pathlib import Path
+import configparser
 
 def load_rules():
     with open('rules.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
     return [r for r in data['rules'] if r.get('enabled', True)]
 
+def parse_file(file_path):
+    ext = file_path.suffix.lower()
+    with open(file_path, 'r') as f:
+        content = f.read()
+    
+    if ext in ['.yaml', '.yml']:
+        return yaml.safe_load(content), content
+    elif ext == '.json':
+        return json.loads(content), content
+    elif ext == '.toml':
+        return tomllib.loads(content), content
+    elif ext in ['.conf', '.ini']:
+        config = configparser.ConfigParser()
+        config.read_string(content)
+        return config, content
+    else:
+        return None, content
+
 def check_config(file_path, rules):
     errors = []
     
     try:
-        with open(file_path, 'r') as f:
-            content = f.read()
-            config = yaml.safe_load(content)
+        config, content = parse_file(file_path)
+        if config is None and file_path.suffix.lower() not in ['.yaml', '.yml', '.json', '.toml', '.conf', '.ini']:
+            return errors
         
         for rule in rules:
-            pattern = rule['pattern']
-            if pattern in content:
-                item = {
+            if rule['pattern'] in content:
+                errors.append({
                     'rule': rule['name'],
                     'message': rule['message'],
                     'severity': rule['severity']
-                }
-                errors.append(item)
+                })
         
-    except yaml.YAMLError as e:
-        errors.append({
-            'rule': 'yaml_syntax',
-            'message': f'Ошибка в YAML синтаксисе: {e}',
-            'severity': 'error'
-        })
     except Exception as e:
         errors.append({
-            'rule': 'file_read',
-            'message': f'Не могу прочитать файл: {e}',
+            'rule': 'parse_error',
+            'message': f'Ошибка парсинга файла: {e}',
             'severity': 'error'
         })
     
@@ -47,8 +59,9 @@ def main():
     print("-" * 50)
     
     all_results = []
+    extensions = ['*.yaml', '*.yml', '*.json', '*.toml', '*.conf', '*.ini']
     
-    for ext in ['*.yaml', '*.yml']:
+    for ext in extensions:
         for file_path in Path('.').rglob(ext):
             if '.github' in str(file_path):
                 continue
