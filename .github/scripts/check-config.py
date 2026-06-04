@@ -4,10 +4,6 @@ import json
 from pathlib import Path
 
 def check_config(file_path):
-    """
-    Проверяет один конфиг-файл на типичные ошибки
-    Возвращает список найденных проблем
-    """
     errors = []
     warnings = []
     
@@ -133,7 +129,7 @@ def main():
                 print(f"   • {result['file']}: {result['message']}")
         
         print("\n" + "=" * 60)
-        print(f"📊 ИТОГО: {len(errors_only)} ошибок, {len(warnings_only)} предупреждений")
+        print(f"ИТОГО: {len(errors_only)} ошибок, {len(warnings_only)} предупреждений")
         print("=" * 60)
         
         # Если есть критичные ошибки — останавливаем CI/CD
